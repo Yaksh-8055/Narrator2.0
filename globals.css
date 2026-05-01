@@ -1,0 +1,54 @@
+/* app/globals.css
+ *
+ * Global stylesheet — imported by app/layout.tsx.
+ * Contains Tailwind's three directive layers and any base overrides.
+ */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ── Base overrides ──────────────────────────────────────────────────────── */
+
+@layer base {
+  /* Apply the Inter font variable set in layout.tsx to the whole document */
+  html {
+    font-family: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  }
+
+  /* Smooth scrolling for anchor navigation */
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* Remove default margin/padding that can cause layout shifts */
+  body {
+    margin: 0;
+    padding: 0;
+  }
+
+  /* Consistent box-sizing across all elements */
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+}
+
+/* ── Utility overrides ───────────────────────────────────────────────────── */
+
+@layer utilities {
+  /* Serif font helper — used in story content display */
+  .font-story {
+    font-family: Georgia, 'Times New Roman', serif;
+  }
+
+  /* Hide scrollbar but keep scroll functionality (cross-browser) */
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}

@@ -1,0 +1,5 @@
+{
+  "/api/story/generate/route": "app/api/story/generate/route.js",
+  "/api/cloudant/list/route": "app/api/cloudant/list/route.js",
+  "/page": "app/page.js"
+}
